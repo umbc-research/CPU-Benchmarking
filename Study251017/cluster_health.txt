@@ -1,0 +1,23 @@
+
+--- CLUSTER HEALTH REPORT: 2025-11-18 ---
+
+🔴 PROBLEM DETECTED in Match (1 threads)
+   Expected Time: ~26.75s (Threshold: 31.46s)
+   -> Node c24-49 was SLOW: 33.87s (+7.12s slower than avg)
+----------------------------------------
+🔴 PROBLEM DETECTED in Match (2 threads)
+   Expected Time: ~14.30s (Threshold: 16.22s)
+   -> Node c24-49 was SLOW: 17.21s (+2.91s slower than avg)
+----------------------------------------
+🔴 PROBLEM DETECTED in Match (4 threads)
+   Expected Time: ~7.51s (Threshold: 9.17s)
+   -> Node c24-49 was SLOW: 10.51s (+3.00s slower than avg)
+----------------------------------------
+🔴 PROBLEM DETECTED in Match (8 threads)
+   Expected Time: ~4.30s (Threshold: 5.57s)
+   -> Node c24-49 was SLOW: 6.91s (+2.61s slower than avg)
+----------------------------------------
+🔴 PROBLEM DETECTED in Match (16 threads)
+   Expected Time: ~4.84s (Threshold: 8.27s)
+   -> Node c24-49 was SLOW: 8.37s (+3.53s slower than avg)
+----------------------------------------
