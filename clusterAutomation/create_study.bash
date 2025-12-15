@@ -25,11 +25,6 @@ function write_script
 
     # --- Set Partition and QOS Based on Node Name ---
     case "${NODENUMBER}" in
-        # NEW: Handle the special 'test' partition nodes (c18-43 to c18-50)
-        c18-4[3-9]|c18-50)
-            PARTITION_NAME="test"
-            QOS_NAME="support"
-            ;;
         c24*)
             PARTITION_NAME="2024"
             QOS_NAME="shared"

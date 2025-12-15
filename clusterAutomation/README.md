@@ -59,7 +59,7 @@ To back up your results and scripts to GitHub, use standard git commands.
 Quick Manual Update:
 
 git add .
-git commit -m "Daily benchmark results update"
+git commit -m "Update"
 git push
 
 
