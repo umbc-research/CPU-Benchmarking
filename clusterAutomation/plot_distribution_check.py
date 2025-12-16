@@ -44,11 +44,7 @@ df = df[df['NPerNode'] == TARGET_THREADS].copy()
 def get_partition_group(node):
     if node.startswith('c24'): return '2024'
     if node.startswith('c21'): return '2021'
-    if node.startswith('c18'):
-        try:
-            if 43 <= int(node.split('-')[1]) <= 50: return '2018_Mixed'
-        except: pass
-        return '2018_Mixed'
+    if node.startswith('c18'): return '2018'
     return 'Other'
 
 df['PartitionGroup'] = df['Node'].apply(get_partition_group)
@@ -60,7 +56,7 @@ today = pd.Timestamp.now().normalize()
 cutoff_date = today - pd.Timedelta(days=HISTORY_DAYS)
 
 # 4. Generate Plot for Each Group
-groups = ['2024', '2021', '2018_Mixed']
+groups = ['2024', '2021', '2018']
 
 for group in groups:
     print(f"Analyzing distribution for {group}...")

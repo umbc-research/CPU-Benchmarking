@@ -44,7 +44,7 @@ if df_filtered.empty:
 def get_partition_group(node):
     if node.startswith('c24'): return '2024'
     if node.startswith('c21'): return '2021'
-    if node.startswith('c18'): return '2018_Mixed'
+    if node.startswith('c18'): return '2018'
     return 'Other'
 
 df_filtered['PartitionGroup'] = df_filtered['Node'].apply(get_partition_group)
@@ -91,7 +91,7 @@ def generate_heatmap(data, title_label, filename_label):
 # 4. Main Loop
 
 # A. Generate Individual Partition Maps
-groups = ['2024', '2021', '2018_Mixed']
+groups = ['2024', '2021', '2018']
 for group_name in groups:
     print(f"Generating heatmap for {group_name}...")
     df_group = df_filtered[df_filtered['PartitionGroup'] == group_name]

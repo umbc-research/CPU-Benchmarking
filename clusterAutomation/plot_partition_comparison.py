@@ -33,12 +33,7 @@ df['Time_sec'] = pd.to_numeric(df['Time_sec_Parsed'], errors='coerce')
 
 # --- Accurate Partition Logic ---
 def get_partition_name(node):
-    if node.startswith('c18-'):
-        try:
-            node_num = int(node.split('-')[1])
-            if 43 <= node_num <= 50: return 'Test'
-        except: pass
-        return '2018'
+    if node.startswith('c18'): return '2018'
     if node.startswith('c24'): return '2024'
     if node.startswith('c21'): return '2021'
     return 'Other'
@@ -48,7 +43,7 @@ df['Partition'] = df['Node'].apply(get_partition_name)
 print(f"Filtering for all NPerNode={TASKS_TO_PLOT} tests...")
 df_filtered = df[
     (df['NPerNode'] == TASKS_TO_PLOT) &
-    (df['Partition'].isin(['2018', '2021', '2024', 'Test']))
+    (df['Partition'].isin(['2018', '2021', '2024']))
 ]
 
 if df_filtered.empty:

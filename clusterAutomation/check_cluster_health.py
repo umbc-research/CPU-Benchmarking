@@ -31,12 +31,7 @@ df['Timestamp'] = pd.to_datetime(df['Timestamp'], utc=True).dt.tz_localize(None)
 # 2. Assign Partitions
 def get_partition_name(node):
     # Handle Test Partition
-    if node.startswith('c18-'):
-        try:
-            node_num = int(node.split('-')[1])
-            if 43 <= node_num <= 50: return 'Test'
-        except: pass
-        return '2018'
+    if node.startswith('c18'): return '2018'
     if node.startswith('c24'): return '2024'
     if node.startswith('c21'): return '2021'
     return 'Other'
