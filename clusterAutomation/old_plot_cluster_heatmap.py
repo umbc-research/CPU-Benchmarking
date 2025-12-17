@@ -67,10 +67,8 @@ def generate_heatmap(data, title_label, filename_label):
     
     plt.figure(figsize=(12, fig_height))
     
-    # --- COLOR BLIND FRIENDLY CHANGE ---
-    # Changed cmap from 'RdYlGn_r' to 'viridis'
-    # Viridis: Dark Purple = Low Values (Fast), Yellow = High Values (Slow)
-    plt.imshow(heatmap_data, cmap='viridis', aspect='auto') 
+    # Plot Heatmap (Red=Slow, Green=Fast)
+    plt.imshow(heatmap_data, cmap='RdYlGn_r', aspect='auto') 
 
     # Colorbar
     cbar = plt.colorbar()

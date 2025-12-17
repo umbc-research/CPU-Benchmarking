@@ -26,21 +26,21 @@ function write_script
     # --- Set Partition and QOS Based on Node Name ---
     case "${NODENUMBER}" in
         c24*)
-            PARTITION_NAME="support"
-            QOS_NAME="support"
+            PARTITION_NAME="2024"
+            QOS_NAME="shared"
             ;;
         c21*)
-            PARTITION_NAME="support"
-            QOS_NAME="support"
+            PARTITION_NAME="2021"
+            QOS_NAME="normal"
             ;;
         c18*)
-            PARTITION_NAME="support"
-            QOS_NAME="support"
+            PARTITION_NAME="2018"
+            QOS_NAME="normal"
             ;;
         *)
             echo "Warning: Unknown prefix for node ${NODENUMBER}. Defaulting." >&2
-            PARTITION_NAME="support"
-            QOS_NAME="support"
+            PARTITION_NAME="match"
+            QOS_NAME="shared"
             ;;
     esac
 
