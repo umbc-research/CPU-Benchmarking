@@ -5,7 +5,7 @@ import numpy as np
 # --- CONFIG ---
 CSV_FILE = 'performance_results.csv'
 Z_SCORE_THRESHOLD = 2.0 
-HISTORY_DAYS = 21
+HISTORY_DAYS = 35
 # ----------------
 
 # 1. Load Data

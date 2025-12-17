@@ -5,7 +5,7 @@ import os # <--- NEW IMPORT
 # --- Config ---
 TASKS_TO_PLOT = 1 
 CSV_FILE = 'performance_results.csv'
-OUTPUT_DIR = 'plots' # <--- NEW CONFIG
+OUTPUT_DIR = 'plots'
 # ------------------------------
 
 # Create output directory

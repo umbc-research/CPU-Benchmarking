@@ -15,8 +15,7 @@ except ImportError:
 TARGET_THREADS = 1
 CSV_FILE = 'performance_results.csv'
 OUTPUT_DIR = 'plots'
-HISTORY_DAYS = 21
-# Changed Z-score as requested
+HISTORY_DAYS = 35
 Z_SCORE_THRESHOLD = 3.0
 # ----------------
 
