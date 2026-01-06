@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os # <--- NEW IMPORT
 
 # --- Config ---
-TASKS_TO_PLOT = 1 
+TASKS_TO_PLOT = 16 
 CSV_FILE = 'performance_results.csv'
 OUTPUT_DIR = 'plots'
 # ------------------------------

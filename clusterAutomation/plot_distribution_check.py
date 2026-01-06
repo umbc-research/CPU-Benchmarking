@@ -12,7 +12,7 @@ except ImportError:
 # ------------------
 
 # --- CONFIG ---
-TARGET_THREADS = 1
+TARGET_THREADS = 16
 CSV_FILE = 'performance_results.csv'
 OUTPUT_DIR = 'plots'
 HISTORY_DAYS = 35
