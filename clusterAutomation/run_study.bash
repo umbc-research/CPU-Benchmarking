@@ -28,7 +28,7 @@ NODE_LIST=$(sinfo -M chip-cpu -o "%n" -p 2018,2021,2024 | tail -n +3)
 for N in 131072
 do
     STUDY_NAME=$(printf 'N%07d' ${N})
-    for NPERNODE in 16 32 64
+    for NPERNODE in 16 32 48
     do
         for NODE in ${NODE_LIST}
         do
