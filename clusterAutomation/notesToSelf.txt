@@ -1,2 +1,0 @@
-Changed the time to 08:00:00, maybe they were cancelling because they took longer than the previous 01:55:00
-I just updated the N to 131072, doubling from 65536. Everything actually ran for 65536, so far nothing for 131072, but will wait till tmrw to confirm this.

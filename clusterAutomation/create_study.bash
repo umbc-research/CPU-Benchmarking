@@ -65,7 +65,7 @@ function write_script
 #SBATCH --nodelist=${NODENUMBER}
 #SBATCH --ntasks-per-node=${NPERNODE}
 #SBATCH --time=08:00:00
-#SBATCH --mem=150G
+#SBATCH --mem=180G
 
 module load intel/2024a
 unset I_MPI_PMI_LIBRARY
