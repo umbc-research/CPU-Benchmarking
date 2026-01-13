@@ -64,8 +64,8 @@ function write_script
 #SBATCH --qos=${QOS_NAME}
 #SBATCH --nodelist=${NODENUMBER}
 #SBATCH --ntasks-per-node=${NPERNODE}
-#SBATCH --time=01:55:00
-#SBATCH --mem=100G
+#SBATCH --time=08:00:00
+#SBATCH --mem=150G
 
 module load intel/2024a
 unset I_MPI_PMI_LIBRARY
@@ -87,7 +87,7 @@ _EOF_
 }
 
 # --- Main loops ---
-for N in 1048576
+for N in 131072
 do
     for NPERNODE in 16 32 64
     do

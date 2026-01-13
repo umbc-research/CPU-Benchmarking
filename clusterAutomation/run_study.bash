@@ -25,7 +25,7 @@ fi
 NODE_LIST=$(sinfo -M chip-cpu -o "%n" -p 2018,2021,2024 | tail -n +3)
 
 # For each problem size N...
-for N in 1048576
+for N in 131072
 do
     STUDY_NAME=$(printf 'N%07d' ${N})
     for NPERNODE in 16 32 64
@@ -40,14 +40,12 @@ do
                 continue
             fi
             
-            # --- THE FIX IS HERE ---
             # We explicitly format the job name to remove any ambiguity
             # In create-study.bash we used: JOB_NAME="power-${NPERNODE}-${NODENUMBER}"
             # So if NPERNODE is 1, it is "power-1-c24-01", NOT "power-01-c24-01"
             # We simply use the raw variable here to match that.
             JOB_NAME="power-${NPERNODE}-${NODE}"
             
-            # CHECK:
             # Run squeue looking for this EXACT name.
             # We redirect output to a variable.
             JOB_STATE=$($SQUEUE_CMD -M chip-cpu -h -o "%t" -n "${JOB_NAME}" -u "$USER" | grep -v "CLUSTER")
