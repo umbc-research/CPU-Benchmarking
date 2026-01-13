@@ -5,7 +5,7 @@ import numpy as np
 import os
 
 # --- CONFIG ---
-TARGET_THREADS = 16 
+TARGET_THREADS = 36 
 CSV_FILE = 'performance_results.csv'
 OUTPUT_DIR = 'plots'
 # ----------------

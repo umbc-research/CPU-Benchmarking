@@ -87,9 +87,9 @@ _EOF_
 }
 
 # --- Main loops ---
-for N in 131072
+for N in 131328
 do
-    for NPERNODE in 16 32 48
+    for NPERNODE in 12 24 36
     do
         for NODE in ${NODE_LIST}
         do

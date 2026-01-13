@@ -1,0 +1,19 @@
+==================================================
+ Job Resource Usage Summary for 122447
+==================================================
+Group                           : pi_doit
+Job Started                     : Tue Jan 13 11:02:00 EST 2026 
+Job Ended                       : Tue Jan 13 11:03:05 EST 2026
+Job Completion Status           : COMPLETED
+Working Directory               :/umbc/rs/pi_doit/users/elliotg2/benchmarking/clusterAutomation/N0131328/n01ppn24_c18-27
+Partition, Cluster Name         : support, chip-cpu
+Allocated Node                  : c18-27
+Group Name                      : pi_doit
+Total CPU  Mem Requested / Allocated: 153600M / 153600M
+Number of GPUS Requested       :  0
+Walltime Requested              : 08:00:00
+Walltime Used                   : 00:01:05
+
+CPUs Allocated     :  24 
+Total CPU-Time Allocated       : 00:26:00
+==================================================
