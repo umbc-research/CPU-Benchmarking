@@ -1,0 +1,722 @@
+Starting study in: /home/elliotg2/doit_user/benchmarking/clusterAutomation
+Submitting job in: N0131328/n01ppn12_c24-24
+  -> NEW: Submitted batch job 127526 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-29
+  -> NEW: Submitted batch job 127527 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-52
+  -> NEW: Submitted batch job 127528 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-01
+  -> NEW: Submitted batch job 127529 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-02
+  -> NEW: Submitted batch job 127530 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-03
+  -> NEW: Submitted batch job 127531 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-04
+  -> NEW: Submitted batch job 127532 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-05
+  -> NEW: Submitted batch job 127533 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-06
+  -> NEW: Submitted batch job 127534 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-07
+  -> NEW: Submitted batch job 127535 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-08
+  -> NEW: Submitted batch job 127536 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-09
+  -> NEW: Submitted batch job 127537 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-10
+  -> NEW: Submitted batch job 127538 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-11
+  -> NEW: Submitted batch job 127539 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-25
+  -> NEW: Submitted batch job 127540 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-26
+  -> NEW: Submitted batch job 127541 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-27
+  -> NEW: Submitted batch job 127542 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-12
+  -> NEW: Submitted batch job 127543 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-13
+  -> NEW: Submitted batch job 127544 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-14
+  -> NEW: Submitted batch job 127545 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-15
+  -> NEW: Submitted batch job 127546 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-16
+  -> NEW: Submitted batch job 127547 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-17
+  -> NEW: Submitted batch job 127548 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-18
+  -> NEW: Submitted batch job 127549 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-19
+  -> NEW: Submitted batch job 127550 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-20
+  -> NEW: Submitted batch job 127551 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-21
+  -> NEW: Submitted batch job 127552 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-22
+  -> NEW: Submitted batch job 127553 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-23
+  -> NEW: Submitted batch job 127554 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-28
+  -> NEW: Submitted batch job 127555 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-30
+  -> NEW: Submitted batch job 127556 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-31
+  -> NEW: Submitted batch job 127557 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-32
+  -> NEW: Submitted batch job 127558 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-33
+  -> NEW: Submitted batch job 127559 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-34
+  -> NEW: Submitted batch job 127560 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-35
+  -> NEW: Submitted batch job 127561 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-36
+  -> NEW: Submitted batch job 127562 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-37
+  -> NEW: Submitted batch job 127563 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-38
+  -> NEW: Submitted batch job 127564 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-39
+  -> NEW: Submitted batch job 127565 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-40
+  -> NEW: Submitted batch job 127566 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-41
+  -> NEW: Submitted batch job 127567 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-42
+  -> NEW: Submitted batch job 127568 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-43
+  -> NEW: Submitted batch job 127569 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-44
+  -> NEW: Submitted batch job 127570 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-45
+  -> NEW: Submitted batch job 127571 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-46
+  -> NEW: Submitted batch job 127572 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-47
+  -> NEW: Submitted batch job 127573 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-48
+  -> NEW: Submitted batch job 127574 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-49
+  -> NEW: Submitted batch job 127575 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-50
+  -> NEW: Submitted batch job 127576 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c24-51
+  -> NEW: Submitted batch job 127577 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c21-01
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-02
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-03
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-04
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-05
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-06
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-07
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-08
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-09
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-10
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-11
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-12
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-13
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-14
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-15
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-16
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-17
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c21-18
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn12_c18-43
+  -> NEW: Submitted batch job 127596 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-01
+  -> NEW: Submitted batch job 127597 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-02
+  -> NEW: Submitted batch job 127598 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-03
+  -> NEW: Submitted batch job 127599 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-04
+  -> NEW: Submitted batch job 127600 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-05
+  -> NEW: Submitted batch job 127601 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-06
+  -> NEW: Submitted batch job 127602 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-07
+  -> NEW: Submitted batch job 127603 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-08
+  -> NEW: Submitted batch job 127604 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-28
+  -> NEW: Submitted batch job 127605 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-29
+  -> NEW: Submitted batch job 127606 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-30
+  -> NEW: Submitted batch job 127607 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-34
+  -> NEW: Submitted batch job 127608 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-09
+  -> NEW: Submitted batch job 127609 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-10
+  -> NEW: Submitted batch job 127610 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-11
+  -> NEW: Submitted batch job 127611 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-12
+  -> NEW: Submitted batch job 127612 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-13
+  -> NEW: Submitted batch job 127613 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-14
+  -> NEW: Submitted batch job 127614 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-15
+  -> NEW: Submitted batch job 127615 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-16
+  -> NEW: Submitted batch job 127616 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-17
+  -> NEW: Submitted batch job 127617 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-18
+  -> NEW: Submitted batch job 127618 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-19
+  -> NEW: Submitted batch job 127619 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-20
+  -> NEW: Submitted batch job 127620 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-21
+  -> NEW: Submitted batch job 127621 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-22
+  -> NEW: Submitted batch job 127622 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-23
+  -> NEW: Submitted batch job 127623 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-24
+  -> NEW: Submitted batch job 127624 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-25
+  -> NEW: Submitted batch job 127625 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-26
+  -> NEW: Submitted batch job 127626 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-27
+  -> NEW: Submitted batch job 127627 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-31
+  -> NEW: Submitted batch job 127628 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-32
+  -> NEW: Submitted batch job 127629 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-33
+  -> NEW: Submitted batch job 127630 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-35
+  -> NEW: Submitted batch job 127631 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-36
+  -> NEW: Submitted batch job 127632 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-37
+  -> NEW: Submitted batch job 127633 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-38
+  -> NEW: Submitted batch job 127634 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-39
+  -> NEW: Submitted batch job 127635 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-40
+  -> NEW: Submitted batch job 127636 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-41
+  -> NEW: Submitted batch job 127637 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-42
+  -> NEW: Submitted batch job 127638 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-44
+  -> NEW: Submitted batch job 127639 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-45
+  -> NEW: Submitted batch job 127640 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-46
+  -> NEW: Submitted batch job 127641 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-47
+  -> NEW: Submitted batch job 127642 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-48
+  -> NEW: Submitted batch job 127643 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-49
+  -> NEW: Submitted batch job 127644 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn12_c18-50
+  -> NEW: Submitted batch job 127645 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-24
+  -> NEW: Submitted batch job 127646 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-29
+  -> NEW: Submitted batch job 127647 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-52
+  -> NEW: Submitted batch job 127648 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-01
+  -> NEW: Submitted batch job 127649 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-02
+  -> NEW: Submitted batch job 127650 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-03
+  -> NEW: Submitted batch job 127651 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-04
+  -> NEW: Submitted batch job 127652 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-05
+  -> NEW: Submitted batch job 127653 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-06
+  -> NEW: Submitted batch job 127654 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-07
+  -> NEW: Submitted batch job 127655 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-08
+  -> NEW: Submitted batch job 127656 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-09
+  -> NEW: Submitted batch job 127657 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-10
+  -> NEW: Submitted batch job 127658 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-11
+  -> NEW: Submitted batch job 127659 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-25
+  -> NEW: Submitted batch job 127660 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-26
+  -> NEW: Submitted batch job 127661 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-27
+  -> NEW: Submitted batch job 127662 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-12
+  -> NEW: Submitted batch job 127663 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-13
+  -> NEW: Submitted batch job 127664 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-14
+  -> NEW: Submitted batch job 127665 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-15
+  -> NEW: Submitted batch job 127666 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-16
+  -> NEW: Submitted batch job 127667 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-17
+  -> NEW: Submitted batch job 127668 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-18
+  -> NEW: Submitted batch job 127669 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-19
+  -> NEW: Submitted batch job 127670 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-20
+  -> NEW: Submitted batch job 127671 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-21
+  -> NEW: Submitted batch job 127672 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-22
+  -> NEW: Submitted batch job 127673 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-23
+  -> NEW: Submitted batch job 127674 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-28
+  -> NEW: Submitted batch job 127675 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-30
+  -> NEW: Submitted batch job 127676 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-31
+  -> NEW: Submitted batch job 127677 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-32
+  -> NEW: Submitted batch job 127678 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-33
+  -> NEW: Submitted batch job 127679 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-34
+  -> NEW: Submitted batch job 127680 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-35
+  -> NEW: Submitted batch job 127681 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-36
+  -> NEW: Submitted batch job 127682 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-37
+  -> NEW: Submitted batch job 127683 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-38
+  -> NEW: Submitted batch job 127684 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-39
+  -> NEW: Submitted batch job 127685 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-40
+  -> NEW: Submitted batch job 127686 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-41
+  -> NEW: Submitted batch job 127687 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-42
+  -> NEW: Submitted batch job 127688 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-43
+  -> NEW: Submitted batch job 127689 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-44
+  -> NEW: Submitted batch job 127690 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-45
+  -> NEW: Submitted batch job 127691 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-46
+  -> NEW: Submitted batch job 127692 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-47
+  -> NEW: Submitted batch job 127693 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-48
+  -> NEW: Submitted batch job 127694 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-49
+  -> NEW: Submitted batch job 127695 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-50
+  -> NEW: Submitted batch job 127696 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c24-51
+  -> NEW: Submitted batch job 127697 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c21-01
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-02
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-03
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-04
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-05
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-06
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-07
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-08
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-09
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-10
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-11
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-12
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-13
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-14
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-15
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-16
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-17
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c21-18
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn24_c18-43
+  -> NEW: Submitted batch job 127716 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-01
+  -> NEW: Submitted batch job 127717 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-02
+  -> NEW: Submitted batch job 127718 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-03
+  -> NEW: Submitted batch job 127719 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-04
+  -> NEW: Submitted batch job 127720 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-05
+  -> NEW: Submitted batch job 127721 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-06
+  -> NEW: Submitted batch job 127722 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-07
+  -> NEW: Submitted batch job 127723 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-08
+  -> NEW: Submitted batch job 127724 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-28
+  -> NEW: Submitted batch job 127725 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-29
+  -> NEW: Submitted batch job 127726 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-30
+  -> NEW: Submitted batch job 127727 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-34
+  -> NEW: Submitted batch job 127728 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-09
+  -> NEW: Submitted batch job 127729 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-10
+  -> NEW: Submitted batch job 127730 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-11
+  -> NEW: Submitted batch job 127731 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-12
+  -> NEW: Submitted batch job 127732 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-13
+  -> NEW: Submitted batch job 127733 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-14
+  -> NEW: Submitted batch job 127734 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-15
+  -> NEW: Submitted batch job 127735 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-16
+  -> NEW: Submitted batch job 127736 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-17
+  -> NEW: Submitted batch job 127737 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-18
+  -> NEW: Submitted batch job 127738 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-19
+  -> NEW: Submitted batch job 127739 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-20
+  -> NEW: Submitted batch job 127740 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-21
+  -> NEW: Submitted batch job 127741 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-22
+  -> NEW: Submitted batch job 127742 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-23
+  -> NEW: Submitted batch job 127743 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-24
+  -> NEW: Submitted batch job 127744 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-25
+  -> NEW: Submitted batch job 127745 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-26
+  -> NEW: Submitted batch job 127746 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-27
+  -> NEW: Submitted batch job 127747 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-31
+  -> NEW: Submitted batch job 127748 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-32
+  -> NEW: Submitted batch job 127749 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-33
+  -> NEW: Submitted batch job 127750 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-35
+  -> NEW: Submitted batch job 127751 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-36
+  -> NEW: Submitted batch job 127752 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-37
+  -> NEW: Submitted batch job 127753 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-38
+  -> NEW: Submitted batch job 127754 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-39
+  -> NEW: Submitted batch job 127755 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-40
+  -> NEW: Submitted batch job 127756 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-41
+  -> NEW: Submitted batch job 127757 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-42
+  -> NEW: Submitted batch job 127758 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-44
+  -> NEW: Submitted batch job 127759 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-45
+  -> NEW: Submitted batch job 127760 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-46
+  -> NEW: Submitted batch job 127761 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-47
+  -> NEW: Submitted batch job 127762 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-48
+  -> NEW: Submitted batch job 127763 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-49
+  -> NEW: Submitted batch job 127764 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn24_c18-50
+  -> NEW: Submitted batch job 127765 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-24
+  -> NEW: Submitted batch job 127766 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-29
+  -> NEW: Submitted batch job 127767 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-52
+  -> NEW: Submitted batch job 127768 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-01
+  -> NEW: Submitted batch job 127769 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-02
+  -> NEW: Submitted batch job 127770 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-03
+  -> NEW: Submitted batch job 127771 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-04
+  -> NEW: Submitted batch job 127772 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-05
+  -> NEW: Submitted batch job 127773 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-06
+  -> NEW: Submitted batch job 127774 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-07
+  -> NEW: Submitted batch job 127775 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-08
+  -> NEW: Submitted batch job 127776 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-09
+  -> NEW: Submitted batch job 127777 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-10
+  -> NEW: Submitted batch job 127778 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-11
+  -> NEW: Submitted batch job 127779 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-25
+  -> NEW: Submitted batch job 127780 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-26
+  -> NEW: Submitted batch job 127781 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-27
+  -> NEW: Submitted batch job 127782 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-12
+  -> NEW: Submitted batch job 127783 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-13
+  -> NEW: Submitted batch job 127784 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-14
+  -> NEW: Submitted batch job 127785 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-15
+  -> NEW: Submitted batch job 127786 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-16
+  -> NEW: Submitted batch job 127787 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-17
+  -> NEW: Submitted batch job 127788 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-18
+  -> NEW: Submitted batch job 127789 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-19
+  -> NEW: Submitted batch job 127790 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-20
+  -> NEW: Submitted batch job 127791 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-21
+  -> NEW: Submitted batch job 127792 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-22
+  -> NEW: Submitted batch job 127793 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-23
+  -> NEW: Submitted batch job 127794 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-28
+  -> NEW: Submitted batch job 127795 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-30
+  -> NEW: Submitted batch job 127796 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-31
+  -> NEW: Submitted batch job 127797 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-32
+  -> NEW: Submitted batch job 127798 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-33
+  -> NEW: Submitted batch job 127799 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-34
+  -> NEW: Submitted batch job 127800 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-35
+  -> NEW: Submitted batch job 127801 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-36
+  -> NEW: Submitted batch job 127802 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-37
+  -> NEW: Submitted batch job 127803 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-38
+  -> NEW: Submitted batch job 127804 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-39
+  -> NEW: Submitted batch job 127805 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-40
+  -> NEW: Submitted batch job 127806 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-41
+  -> NEW: Submitted batch job 127807 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-42
+  -> NEW: Submitted batch job 127808 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-43
+  -> NEW: Submitted batch job 127809 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-44
+  -> NEW: Submitted batch job 127810 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-45
+  -> NEW: Submitted batch job 127811 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-46
+  -> NEW: Submitted batch job 127812 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-47
+  -> NEW: Submitted batch job 127813 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-48
+  -> NEW: Submitted batch job 127814 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-49
+  -> NEW: Submitted batch job 127815 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-50
+  -> NEW: Submitted batch job 127816 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c24-51
+  -> NEW: Submitted batch job 127817 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c21-01
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-02
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-03
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-04
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-05
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-06
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-07
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-08
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-09
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-10
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-11
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-12
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-13
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-14
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-15
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-16
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-17
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c21-18
+  -> NEW: sbatch: error: Batch job submission failed: Requested node configuration is not available
+Submitting job in: N0131328/n01ppn36_c18-43
+  -> NEW: Submitted batch job 127836 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-01
+  -> NEW: Submitted batch job 127837 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-02
+  -> NEW: Submitted batch job 127838 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-03
+  -> NEW: Submitted batch job 127839 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-04
+  -> NEW: Submitted batch job 127840 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-05
+  -> NEW: Submitted batch job 127841 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-06
+  -> NEW: Submitted batch job 127842 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-07
+  -> NEW: Submitted batch job 127843 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-08
+  -> NEW: Submitted batch job 127844 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-28
+  -> NEW: Submitted batch job 127845 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-29
+  -> NEW: Submitted batch job 127846 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-30
+  -> NEW: Submitted batch job 127847 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-34
+  -> NEW: Submitted batch job 127848 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-09
+  -> NEW: Submitted batch job 127849 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-10
+  -> NEW: Submitted batch job 127850 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-11
+  -> NEW: Submitted batch job 127851 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-12
+  -> NEW: Submitted batch job 127852 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-13
+  -> NEW: Submitted batch job 127853 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-14
+  -> NEW: Submitted batch job 127854 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-15
+  -> NEW: Submitted batch job 127855 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-16
+  -> NEW: Submitted batch job 127856 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-17
+  -> NEW: Submitted batch job 127857 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-18
+  -> NEW: Submitted batch job 127858 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-19
+  -> NEW: Submitted batch job 127859 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-20
+  -> NEW: Submitted batch job 127860 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-21
+  -> NEW: Submitted batch job 127861 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-22
+  -> NEW: Submitted batch job 127862 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-23
+  -> NEW: Submitted batch job 127863 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-24
+  -> NEW: Submitted batch job 127864 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-25
+  -> NEW: Submitted batch job 127865 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-26
+  -> NEW: Submitted batch job 127866 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-27
+  -> NEW: Submitted batch job 127867 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-31
+  -> NEW: Submitted batch job 127868 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-32
+  -> NEW: Submitted batch job 127869 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-33
+  -> NEW: Submitted batch job 127870 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-35
+  -> NEW: Submitted batch job 127871 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-36
+  -> NEW: Submitted batch job 127872 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-37
+  -> NEW: Submitted batch job 127873 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-38
+  -> NEW: Submitted batch job 127874 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-39
+  -> NEW: Submitted batch job 127875 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-40
+  -> NEW: Submitted batch job 127876 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-41
+  -> NEW: Submitted batch job 127877 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-42
+  -> NEW: Submitted batch job 127878 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-44
+  -> NEW: Submitted batch job 127879 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-45
+  -> NEW: Submitted batch job 127880 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-46
+  -> NEW: Submitted batch job 127881 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-47
+  -> NEW: Submitted batch job 127882 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-48
+  -> NEW: Submitted batch job 127883 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-49
+  -> NEW: Submitted batch job 127884 on cluster chip-cpu
+Submitting job in: N0131328/n01ppn36_c18-50
+  -> NEW: Submitted batch job 127885 on cluster chip-cpu
+All tests attempted.
