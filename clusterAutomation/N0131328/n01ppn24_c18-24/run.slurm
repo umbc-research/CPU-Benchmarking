@@ -9,7 +9,7 @@
 #SBATCH --nodelist=c18-24
 #SBATCH --ntasks-per-node=24
 #SBATCH --time=08:00:00
-#SBATCH --mem=180G
+#SBATCH --mem=150G
 
 module load intel/2024a
 unset I_MPI_PMI_LIBRARY
