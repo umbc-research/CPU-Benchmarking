@@ -18,7 +18,7 @@ Node: The cron job is configured on chip-login1.
 
 You can SSH to that node to edit the crontab (crontab -e) if schedule changes are needed.
 
-0 3 * * /bin/bash /home/elliotg2/doit_user/benchmarking/clusterAutomation/run-study.bash > /home/elliotg2/doit_user/benchmarking/clusterAutomation/cron_log.txt 2>&1
+0 3 * * * /bin/bash /home/elliotg2/doit_user/benchmarking/clusterAutomation/run_study.bash > /home/elliotg2/doit_user/benchmarking/clusterAutomation/cron_log.txt 2>&1
 
 📂 File Descriptions
 
