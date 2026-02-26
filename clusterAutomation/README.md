@@ -14,7 +14,7 @@ conda activate BenchmarkingPythonEnvironment
 Automation (Cron)
 The daily automation is managed via crontab.
 
-Node: The cron job is configured on chip-login1.
+Node: The cron job is configured as root chip-login1. It is also in the image at: /cm/images/login-q1-26/etc/cron.d/benchmarking
 
 You can SSH to that node to edit the crontab (crontab -e) if schedule changes are needed.
 
