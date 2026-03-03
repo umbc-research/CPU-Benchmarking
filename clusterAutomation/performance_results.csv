@@ -9110,3 +9110,6 @@ Timestamp,Node,N,NPerNode,Time_sec,Memory_kB
 2026-03-03T03:10:45-05:00,c21-02,131328,12,   00:10:03    0.17     10.04     602.61 % HH:MM:SS=hours=minutes=seconds,Overall usage:         136750940 kB
 2026-03-03T03:27:06-05:00,c21-02,131328,24,   00:15:43    0.26     15.71     942.58 % HH:MM:SS=hours=minutes=seconds,Overall usage:         138919736 kB
 2026-03-03T03:28:08-05:00,c21-02,131328,36,   00:00:38    0.01      0.63      37.68 % HH:MM:SS=hours=minutes=seconds,Overall usage:         141030296 kB
+2026-03-03T10:41:31-05:00,c18-04,131328,24,   00:00:58    0.02      0.97      58.38 % HH:MM:SS=hours=minutes=seconds,Overall usage:         139696344 kB
+2026-03-03T10:42:33-05:00,c18-04,131328,12,   00:01:55    0.03      1.92     114.90 % HH:MM:SS=hours=minutes=seconds,Overall usage:         136763500 kB
+2026-03-03T10:43:18-05:00,c18-04,131328,36,   00:00:38    0.01      0.64      38.35 % HH:MM:SS=hours=minutes=seconds,Overall usage:         142239428 kB
