@@ -30,7 +30,7 @@ if df.empty:
 # 2. Robust Parsing
 df['Time_sec_Parsed'] = df['Time_sec'].astype(str).str.split().str[3]
 df['Time_sec'] = pd.to_numeric(df['Time_sec_Parsed'], errors='coerce')
-df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+df['Timestamp'] = pd.to_datetime(df['Timestamp'], utc=True)
 
 # Filter for target threads
 df_filtered = df[df['NPerNode'] == TARGET_THREADS].copy()
