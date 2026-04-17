@@ -1,17 +1,17 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+from datetime import datetime
 
 # --- Config ---
-TASKS_TO_PLOT = 36 
+TASKS_LIST = [12, 24, 36]
 CSV_FILE = 'performance_results.csv'
 OUTPUT_DIR = 'plots'
 # ------------------------------
 
 # Create output directory
 os.makedirs(OUTPUT_DIR, exist_ok=True)
-filename = f'partition_comparison_{TASKS_TO_PLOT}tasks.png'
-OUTPUT_IMAGE = os.path.join(OUTPUT_DIR, filename)
+current_date = datetime.now().strftime('%Y-%m-%d')
 
 print(f"Loading data from {CSV_FILE}...")
 try:
@@ -40,28 +40,36 @@ def get_partition_name(node):
 
 df['Partition'] = df['Node'].apply(get_partition_name)
 
-print(f"Filtering for all NPerNode={TASKS_TO_PLOT} tests...")
-df_filtered = df[
-    (df['NPerNode'] == TASKS_TO_PLOT) &
-    (df['Partition'].isin(['2018', '2021', '2024']))
-]
+# Loop through each thread count
+for tasks in TASKS_LIST:
+    print(f"\nFiltering for all NPerNode={tasks} tests...")
+    df_filtered = df[
+        (df['NPerNode'] == tasks) &
+        (df['Partition'].isin(['2018', '2021', '2024']))
+    ]
 
-if df_filtered.empty:
-    print(f"No data found with {TASKS_TO_PLOT} tasks.")
-else:
+    if df_filtered.empty:
+        print(f"No data found with {tasks} tasks. Skipping...")
+        continue
+
     if df_filtered['Time_sec'].isnull().all():
-        print("Found data, but all 'Time_sec' values were invalid after parsing.")
-        exit()
-        
+        print(f"Found data for {tasks} tasks, but all 'Time_sec' values were invalid after parsing. Skipping...")
+        continue
+
     print(f"Comparing partitions using {df_filtered['Time_sec'].notnull().sum()} valid data points...")
 
     plt.figure(figsize=(10, 7))
     df_filtered.boxplot(column='Time_sec', by='Partition', grid=False)
-    
-    plt.title(f'Performance Comparison by Partition ({TASKS_TO_PLOT} Tasks)')
-    plt.suptitle('') 
+
+    plt.title(f'Performance Comparison by Partition ({tasks} Tasks)')
+    plt.suptitle('')
     plt.xlabel('Partition')
     plt.ylabel('Time (seconds)')
+
+    # Format filename with the requested structure
+    filename = f'partition_comparison_{tasks}threads_{current_date}.png'
+    OUTPUT_IMAGE = os.path.join(OUTPUT_DIR, filename)
     
     plt.savefig(OUTPUT_IMAGE)
+    plt.close() # Close figure to avoid plotting over the previous chart
     print(f"Success! Plot saved to {OUTPUT_IMAGE}")
