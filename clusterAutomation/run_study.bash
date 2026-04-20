@@ -3,7 +3,7 @@
 nodename=$(hostname -s)
 if [ ! "$nodename" = 'chip-login1' ]; then
   exit 0
-fi 
+fi
 
 source ~/.bashrc
 
@@ -61,11 +61,12 @@ do
             if [ -z "${JOB_STATE}" ]; then
                 echo "Submitting job in: ${DIR_NAME}"
                 cd "${DIR_NAME}"
-                
+
                 # NOTE: Updated to use $SBATCH_CMD
                 SUBMIT_OUTPUT=$($SBATCH_CMD run.slurm 2>&1)
-                
+
                 echo "  -> NEW: ${SUBMIT_OUTPUT}"
+   
                 cd "${CWD}"
             else
                 echo "SKIP (Job '${JOB_NAME}' found in state: ${JOB_STATE})"
@@ -76,3 +77,20 @@ do
 done
 
 echo "All tests attempted."
+
+# Graph Generation:
+# Check if there are any .png files in the plots directory modified in the last 30 days
+if [ -d "${CWD}/plots" ]; then
+    RECENT_PLOTS=$(find "${CWD}/plots" -maxdepth 1 -type f -name "*.png" -mtime -30 -print -quit)
+else
+    # If the directory doesn't exist, we treat it as needing new plots
+    RECENT_PLOTS=""
+fi
+
+# If RECENT_PLOTS is empty, it means no graphs have been generated in the last 30 days
+if [ -z "${RECENT_PLOTS}" ]; then
+    echo "Graphs are a month old (or don't exist). Submitting graph generation..."
+    $SBATCH_CMD generate_graphs.slurm
+else
+    echo "Recent graphs found in ./plots (less than 30 days old). Skipping graph generation."
+fi
