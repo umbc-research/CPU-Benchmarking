@@ -1,8 +1,0 @@
-{
-  "node": "c24-52",
-  "cores": 64,
-  "matrix_size": 8000,
-  "avg_gflops": 118.19,
-  "peak_gflops": 125.42,
-  "min_time_sec": 8.1647
-}
