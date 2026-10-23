@@ -1,0 +1,8 @@
+{
+  "node": "c18-33",
+  "cores": 36,
+  "matrix_size": 8000,
+  "avg_gflops": 63.68,
+  "peak_gflops": 63.69,
+  "min_time_sec": 16.0774
+}
