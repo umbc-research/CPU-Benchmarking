@@ -1,0 +1,8 @@
+{
+  "node": "c21-05",
+  "cores": 48,
+  "copy_gbps": 11.59,
+  "scale_gbps": 4.59,
+  "add_gbps": 5.66,
+  "triad_gbps": 5.19
+}

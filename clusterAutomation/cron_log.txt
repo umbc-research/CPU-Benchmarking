@@ -1,0 +1,1 @@
+/bin/bash: /umbc/rs/pi_doit/users/elliotg2/benchmarking/clusterAutomation/run_study.bash: No such file or directory
