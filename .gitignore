@@ -18,6 +18,9 @@ slurm_*.out
 
 # Ignore the output csv files
 *.csv
+
+#Ignore output files
 venv/
 *.out
 *.err
+*.json
