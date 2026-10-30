@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=storage_bench
-#SBATCH --output=storage_bench_%j.out
-#SBATCH --error=storage_bench_%j.err
+#SBATCH --output=./output/storage_bench_%j.out
+#SBATCH --error=./output/storage_bench_%j.err
 #SBATCH --cluster=chip-cpu
 #SBATCH --nodes=1
 #SBATCH --partition=general

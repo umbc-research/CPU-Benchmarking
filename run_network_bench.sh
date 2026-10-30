@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=net_bench
-#SBATCH --output=net_bench_%j.out
-#SBATCH --error=net_bench_%j.err
+#SBATCH --job-name=net_mpi
+#SBATCH --output=./output/network_bench_%j.out
+#SBATCH --error=./output/network_bench_%j.err
 #SBATCH --cluster=chip-cpu
 #SBATCH --nodes=2
 #SBATCH --ntasks=2
@@ -14,11 +14,9 @@
 
 cd $SLURM_SUBMIT_DIR
 
-# Get server node hostname (the first node in the allocated list)
-SERVER_NODE=$(scontrol show hostnames $SLURM_JOB_NODELIST | head -n 1)
+# Load system MPI module if required on your cluster (e.g., module load openmpi)
+# module load openmpi
 
-# Activate virtual environment
 source venv/bin/activate
 
-# Execute network benchmark across both nodes simultaneously
-srun python network_bench.py $SERVER_NODE
+srun python network_bench.py

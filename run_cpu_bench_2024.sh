@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=cpu_bench
-#SBATCH --output=cpu_bench_%j.out
-#SBATCH --error=cpu_bench_%j.err
+#SBATCH --output=./output/cpu_bench_%j.out
+#SBATCH --error=./output/cpu_bench_%j.err
 #SBATCH --cluster=chip-cpu
 #SBATCH --nodes=1
 #SBATCH --partition=2024

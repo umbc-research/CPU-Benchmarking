@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=memory_bench
-#SBATCH --output=memory_bench_%j.out
-#SBATCH --error=memory_bench_%j.err
+#SBATCH --output=./output/memory_bench_%j.out
+#SBATCH --error=./output/memory_bench_%j.err
 #SBATCH --cluster=chip-cpu
 #SBATCH --nodes=1
 #SBATCH --partition=general
