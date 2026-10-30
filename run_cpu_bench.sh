@@ -6,7 +6,7 @@
 #SBATCH --nodes=1
 #SBATCH --partition=general
 #SBATCH --account=pi_doit
-#SBATCH --qos=normal
+#SBATCH --qos=support
 #SBATCH --time=00:10:00
 #SBATCH --mem=16G
 

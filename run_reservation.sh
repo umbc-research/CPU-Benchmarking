@@ -1,0 +1,24 @@
+#!/bin/bash
+#SBATCH --job-name=cpu_bench
+#SBATCH --output=./output/cpu_bench_%j.out
+#SBATCH --error=./output/cpu_bench_%j.err
+#SBATCH --cluster=chip-cpu
+#SBATCH --partition=support
+#SBATCH --nodelist=c18-17
+#SBATCH --reservation=test_bench
+#SBATCH --account=pi_doit
+#SBATCH --qos=support
+#SBATCH --mem=16G
+#SBATCH --time=00:10:00
+
+export OMP_NUM_THREADS=${SLURM_CPUS_ON_NODE:-$(nproc)}
+export MKL_NUM_THREADS=$OMP_NUM_THREADS
+export OPENBLAS_NUM_THREADS=$OMP_NUM_THREADS
+
+cd $SLURM_SUBMIT_DIR
+
+# Activate virtual environment
+source venv/bin/activate
+
+# Execute benchmark
+python cpu_bench.py
