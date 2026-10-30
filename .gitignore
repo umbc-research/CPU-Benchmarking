@@ -21,6 +21,7 @@ slurm_*.out
 
 #Ignore output files
 venv/
+omb/
 *.out
 *.err
 *.json

@@ -1,93 +1,73 @@
 import os
 import sys
-import time
+import subprocess
 import json
-import platform
-from mpi4py import MPI
+import re
 
-def main():
-    comm = MPI.COMM_WORLD
-    rank = comm.Get_rank()
-    size = comm.Get_size()
-    node_name = platform.node()
+def run_omb_benchmark():
+    slurm_submit_dir = os.environ.get("SLURM_SUBMIT_DIR", os.getcwd())
+    omb_dir = os.path.join(slurm_submit_dir, "omb", "libexec", "osu-micro-benchmarks", "mpi", "pt2pt")
+    
+    latency_bin = os.path.join(omb_dir, "osu_latency")
+    bw_bin = os.path.join(omb_dir, "osu_bw")
 
-    if size < 2:
-        if rank == 0:
-            print("ERROR: This benchmark requires at least 2 MPI processes across 2 nodes.")
+    if not os.path.exists(latency_bin) or not os.path.exists(bw_bin):
+        print(f"ERROR: OMB binaries not found in {omb_dir}. Build OMB first.")
         sys.exit(1)
 
-    # Gather hostnames across ranks
-    hostnames = comm.allgather(node_name)
-    server_node = hostnames[0]
-    client_node = hostnames[1]
+    node_list = os.environ.get("SLURM_JOB_NODELIST", "unknown")
 
-    # Buffer sizes: 1 Byte for Latency, 100 MB for Bandwidth
-    lat_buffer = bytearray(1)
-    bw_size = 100 * 1024 * 1024  # 100 MB
-    bw_buffer = bytearray(bw_size)
+    # 1. Run OSU Latency
+    print("Running OSU Latency Test...")
+    cmd_lat = ["mpirun", "--mca", "pml", "ucx", "-np", "2", latency_bin]
+    res_lat = subprocess.run(cmd_lat, capture_output=True, text=True)
 
-    # 1. Latency Ping-Pong Test
-    iterations_lat = 1000
-    if rank == 0:
-        # Warmup
-        comm.send(lat_buffer, dest=1, tag=10)
-        comm.recv(source=1, tag=11)
+    latency_us = None
+    for line in res_lat.stdout.splitlines():
+        # Grab lowest payload size (0 or 8 bytes) for true hardware wire latency
+        parts = line.strip().split()
+        if len(parts) == 2 and parts[0] in ["0", "8"]:
+            try:
+                latency_us = float(parts[1])
+                break
+            except ValueError:
+                pass
 
-        t0 = time.perf_counter()
-        for _ in range(iterations_lat):
-            comm.send(lat_buffer, dest=1, tag=10)
-            comm.recv(source=1, tag=11)
-        t1 = time.perf_counter()
+    # 2. Run OSU Bandwidth
+    print("Running OSU Bandwidth Test...")
+    cmd_bw = ["mpirun", "--mca", "pml", "ucx", "-np", "2", bw_bin]
+    res_bw = subprocess.run(cmd_bw, capture_output=True, text=True)
 
-        avg_lat_us = round(((t1 - t0) / (iterations_lat * 2)) * 1e6, 2)
+    peak_bw_mbps = 0.0
+    for line in res_bw.stdout.splitlines():
+        parts = line.strip().split()
+        if len(parts) == 2:
+            try:
+                bw = float(parts[1])
+                if bw > peak_bw_mbps:
+                    peak_bw_mbps = bw
+            except ValueError:
+                pass
 
-    elif rank == 1:
-        # Warmup
-        comm.recv(source=0, tag=10)
-        comm.send(lat_buffer, dest=0, tag=11)
+    peak_bw_gbps = round((peak_bw_mbps * 8) / 1000.0, 2)
 
-        for _ in range(iterations_lat):
-            comm.recv(source=0, tag=10)
-            comm.send(lat_buffer, dest=0, tag=11)
+    results = {
+        "nodes": node_list,
+        "latency_us": latency_us,
+        "peak_bandwidth_mbps": peak_bw_mbps,
+        "peak_bandwidth_gbps": peak_bw_gbps
+    }
 
-    # 2. Bandwidth Test
-    iterations_bw = 20
-    if rank == 0:
-        t0 = time.perf_counter()
-        for _ in range(iterations_bw):
-            comm.send(bw_buffer, dest=1, tag=20)
-            comm.recv(source=1, tag=21)
-        t1 = time.perf_counter()
+    print("\n--------------------------------------------------")
+    print(f" OSU MICRO-BENCHMARK RESULTS ({node_list})")
+    print(f" Wire Latency (4-byte):   {latency_us} us")
+    print(f" Peak Throughput Speed:   {peak_bw_mbps} MB/s ({peak_bw_gbps} Gbps)")
+    print("--------------------------------------------------\n")
 
-        total_bytes = bw_size * iterations_bw * 2  # Sent + Received
-        elapsed = t1 - t0
-        mbps = round((total_bytes / elapsed) / (1024 * 1024), 2)
-        gbps = round((total_bytes * 8 / elapsed) / 1e9, 2)
-
-        results = {
-            "pair": f"{server_node}<->{client_node}",
-            "server_node": server_node,
-            "client_node": client_node,
-            "avg_latency_us": avg_lat_us,
-            "throughput_mbps": mbps,
-            "throughput_gbps": gbps
-        }
-
-        print("\n--------------------------------------------------")
-        print(f" HIGH-SPEED MPI NETWORK RESULT ({server_node} <-> {client_node})")
-        print(f" Round-Trip Latency: {avg_lat_us} us")
-        print(f" Throughput Speed:   {mbps} MB/s ({gbps} Gbps)")
-        print("--------------------------------------------------\n")
-
-        out_file = f"network_mpi_{server_node}_{client_node}.json"
-        with open(out_file, "w") as f:
-            json.dump(results, f, indent=2)
-        print(f"Saved JSON metrics to {out_file}")
-
-    elif rank == 1:
-        for _ in range(iterations_bw):
-            comm.recv(source=0, tag=20)
-            comm.send(bw_buffer, dest=0, tag=21)
+    out_file = "network_omb_results.json"
+    with open(out_file, "w") as f:
+        json.dump(results, f, indent=2)
+    print(f"Saved JSON metrics to {out_file}")
 
 if __name__ == "__main__":
-    main()
+    run_omb_benchmark()
