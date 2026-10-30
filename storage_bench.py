@@ -1,83 +1,141 @@
 import os
-import time
-import mmap
-import json
-import platform
 import sys
+import time
+import json
+import shutil
+import platform
+import subprocess
 
-def run_storage_benchmark(test_dir="/tmp", size_mb=1024, block_size_mb=1):
-    node_name = platform.node()
-    test_file = os.path.join(test_dir, f"speedtest_{node_name}.img")
+# Active Ceph OSD Pools
+TARGET_VOLUMES = {
+    "ceph_hdd": "/umbc/rs/pi_doit",
+    "ceph_nvme": "/umbc/scratch"
+}
+
+WORKLOADS = [
+    # (name, type, blocksize, filesize, threads)
+    ("randread_small_1t", "randread", "4k", "64M", 1),
+    ("randwrite_small_1t", "randwrite", "4k", "64M", 1),
+    ("randread_large_1t", "randread", "1M", "512M", 1),
+    ("randwrite_large_1t", "randwrite", "1M", "512M", 1),
+    ("randread_small_2t", "randread", "4k", "64M", 2),
+    ("randwrite_small_2t", "randwrite", "4k", "64M", 2),
+    ("randread_large_2t", "randread", "1M", "512M", 2),
+    ("randwrite_large_2t", "randwrite", "1M", "512M", 2),
+    ("randread_small_4t", "randread", "4k", "64M", 4),
+    ("randwrite_small_4t", "randwrite", "4k", "64M", 4),
+    ("randread_large_4t", "randread", "1M", "512M", 4),
+    ("randwrite_large_4t", "randwrite", "1M", "512M", 4),
+]
+
+def check_fio_installed():
+    if not shutil.which("fio"):
+        print("ERROR: 'fio' executable not found in PATH.", file=sys.stderr)
+        sys.exit(1)
+
+def run_fio_subtest(volume_path, subtest_name, rw_type, blocksize, filesize, threads, runtime=20):
+    user = os.environ.get("USER", "bench_user")
+    test_dir = os.path.join(volume_path, f".fio_bench_{user}")
     
-    block_bytes = block_size_mb * 1024 * 1024
-    total_bytes = size_mb * 1024 * 1024
-    num_blocks = total_bytes // block_bytes
+    try:
+        os.makedirs(test_dir, exist_ok=True)
+    except Exception as e:
+        print(f"Cannot create test directory in {volume_path}: {e}")
+        return 0.0
 
-    print("==================================================")
-    print(f" HPC NATIVE STORAGE BENCHMARK (O_DIRECT)")
-    print(f" Node: {node_name}")
-    print(f" Target Path: {test_dir}")
-    print(f" Test File Size: {size_mb} MB")
-    print("==================================================\n")
+    test_file = os.path.join(test_dir, f"{subtest_name}.fio")
 
-    # Allocate 4KB-aligned memory buffer using mmap
-    buf = mmap.mmap(-1, block_bytes)
-    buf.write(b"A" * block_bytes)
+    cmd = [
+        "fio",
+        f"--name={subtest_name}",
+        f"--filename={test_file}",
+        f"--rw={rw_type}",
+        f"--bs={blocksize}",
+        f"--size={filesize}",
+        "--direct=1",
+        "--ioengine=sync",
+        f"--runtime={runtime}",
+        f"--numjobs={threads}",
+        "--time_based",
+        "--group_reporting",
+        "--eta=never",
+        "--output-format=json"
+    ]
 
-    # 1. Direct Sequential Write Test
-    print("Executing Direct Write Test...")
-    flags_write = os.O_WRONLY | os.O_CREAT | os.O_TRUNC
-    if hasattr(os, "O_DIRECT"):
-        flags_write |= os.O_DIRECT
-
-    start_write = time.perf_counter()
-    fd = os.open(test_file, flags_write, 0o666)
-    for _ in range(num_blocks):
-        os.write(fd, buf)
-    os.close(fd)
-    end_write = time.perf_counter()
-
-    write_elapsed = end_write - start_write
-    write_mbps = round(size_mb / write_elapsed, 2)
-
-    # 2. Direct Sequential Read Test
-    print("Executing Direct Read Test...")
-    flags_read = os.O_RDONLY
-    if hasattr(os, "O_DIRECT"):
-        flags_read |= os.O_DIRECT
-
-    start_read = time.perf_counter()
-    fd = os.open(test_file, flags_read)
-    for _ in range(num_blocks):
-        _ = os.write(1, b"") if os.read(fd, block_bytes) else None
-    os.close(fd)
-    end_read = time.perf_counter()
-
-    read_elapsed = end_read - start_read
-    read_mbps = round(size_mb / read_elapsed, 2)
-
-    # Clean up file
+    res = subprocess.run(cmd, capture_output=True, text=True)
+    
     if os.path.exists(test_file):
         os.remove(test_file)
 
-    results = {
+    if res.returncode != 0:
+        print(f"Warning: fio failed on {volume_path} for {subtest_name}: {res.stderr[:200]}")
+        return 0.0
+
+    try:
+        data = json.loads(res.stdout)
+        jobs = data.get("jobs", [])
+        if rw_type == "randread":
+            bytes_transferred = sum(j.get("read", {}).get("bw_bytes", 0) for j in jobs)
+        else:
+            bytes_transferred = sum(j.get("write", {}).get("bw_bytes", 0) for j in jobs)
+
+        # MiB/s calculation matching Greg's exact formula
+        mib_per_sec = round((bytes_transferred / 1048576), 2)
+        return mib_per_sec
+    except Exception as e:
+        print(f"Error parsing JSON output for {subtest_name}: {e}")
+        return 0.0
+
+def benchmark_volume(vol_key, vol_path, runtime=20):
+    print(f"\n--- Profiling Ceph Pool: {vol_key} ({vol_path}) ---")
+    if not os.path.exists(vol_path) or not os.access(vol_path, os.W_OK):
+        print(f"Skipping {vol_path}: Path does not exist or is not writable by current user.")
+        return None
+
+    vol_results = {}
+    for name, rw_type, bs, fsize, threads in WORKLOADS:
+        print(f"  Running {name} ({rw_type}, bs={bs}, threads={threads})...")
+        mib_s = run_fio_subtest(vol_path, name, rw_type, bs, fsize, threads, runtime=runtime)
+        vol_results[name] = mib_s
+        print(f"    -> Throughput: {mib_s} MiB/s")
+
+    user = os.environ.get("USER", "bench_user")
+    test_dir = os.path.join(vol_path, f".fio_bench_{user}")
+    if os.path.exists(test_dir):
+        shutil.rmtree(test_dir, ignore_errors=True)
+
+    return vol_results
+
+def main():
+    check_fio_installed()
+    node_name = platform.node()
+    timestamp = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+
+    print("==================================================")
+    print(f" HPC CEPH OSD STORAGE PROFILER")
+    print(f" Node: {node_name}")
+    print(f" Timestamp: {timestamp}")
+    print("==================================================")
+
+    all_results = {
+        "timestamp": timestamp,
         "node": node_name,
-        "target_dir": test_dir,
-        "seq_write_mbps": write_mbps,
-        "seq_read_mbps": read_mbps
+        "volumes": {}
     }
 
-    print("\n--------------------------------------------------")
-    print(f" RESULT SUMMARY FOR {node_name}")
-    print(f" Direct Write Throughput: {write_mbps} MB/s")
-    print(f" Direct Read Throughput:  {read_mbps} MB/s")
-    print("--------------------------------------------------\n")
+    for vol_key, vol_path in TARGET_VOLUMES.items():
+        res = benchmark_volume(vol_key, vol_path, runtime=20)
+        if res is not None:
+            all_results["volumes"][vol_key] = res
 
-    out_file = f"storage_{node_name}.json"
+    out_file = f"storage_fio_{node_name}.json"
     with open(out_file, "w") as f:
-        json.dump(results, f, indent=2)
-    print(f"Saved JSON metrics to {out_file}")
+        json.dump(all_results, f, indent=2)
+
+    print("\n==================================================")
+    print(f" COMPLETED STORAGE PROFILE FOR {node_name}")
+    print(f" Results saved to: {out_file}")
+    print("==================================================")
 
 if __name__ == "__main__":
-    target_path = os.environ.get("SLURM_TMPDIR", "/tmp")
-    run_storage_benchmark(test_dir=target_path)
+    main()
