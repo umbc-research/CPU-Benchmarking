@@ -1,0 +1,153 @@
+import argparse
+import subprocess
+import itertools
+import logging
+import json
+import os
+import shutil
+from datetime import datetime
+
+def setup_loggers(timestamp):
+    """Configure Simple and Full text loggers."""
+    os.makedirs("output", exist_ok=True)
+    
+    full_logger = logging.getLogger("FullLog")
+    full_logger.setLevel(logging.DEBUG)
+    full_handler = logging.FileHandler(f"output/bench_full_{timestamp}.log")
+    full_handler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
+    full_logger.addHandler(full_handler)
+
+    simple_logger = logging.getLogger("SimpleLog")
+    simple_logger.setLevel(logging.INFO)
+    simple_handler = logging.FileHandler(f"output/bench_simple_{timestamp}.log")
+    simple_handler.setFormatter(logging.Formatter('%(message)s'))
+    simple_logger.addHandler(simple_handler)
+
+    console = logging.StreamHandler()
+    console.setLevel(logging.INFO)
+    simple_logger.addHandler(console)
+
+    return simple_logger, full_logger
+
+def run_sbatch_wait(cmd, full_logger, description):
+    """Runs sbatch --wait and handles node failures."""
+    full_logger.debug(f"\n{'='*50}\n[START] {description}\nCMD: {' '.join(cmd)}")
+    try:
+        # sbatch --wait blocks until the Slurm job is completely finished or fails
+        result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+        full_logger.debug(result.stdout)
+        full_logger.debug(f"[END] {description} - Exit Code: {result.returncode}\n{'='*50}")
+        return result.returncode
+    except Exception as e:
+        full_logger.error(f"[SYSTEM ERROR] {description} failed to execute: {str(e)}")
+        return -1
+
+def safe_read_json(filepath, dest_archive_path):
+    """Reads a JSON file and moves it to an archive so it doesn't get overwritten."""
+    if not os.path.exists(filepath):
+        return {"error": f"Output file {filepath} not found. Job likely crashed."}
+    
+    try:
+        with open(filepath, 'r') as f:
+            data = json.load(f)
+        # Move it out of the way so the next iteration doesn't overwrite it or read stale data
+        shutil.move(filepath, dest_archive_path)
+        return data
+    except Exception as e:
+        return {"error": f"Failed to parse {filepath}: {str(e)}"}
+
+def main():
+    parser = argparse.ArgumentParser(description="Master Benchmark Runner")
+    parser.add_argument('--nodes', nargs='+', required=True, help="List of nodes to test (e.g., c18-17 c18-18)")
+    parser.add_argument('--reservation', type=str, default=None, help="Name of reservation. Skips if omitted.")
+    args = parser.parse_args()
+
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    simple_logger, full_logger = setup_loggers(timestamp)
+    
+    # Master JSON dictionary to hold everything
+    master_results = {
+        "metadata": {
+            "timestamp": timestamp,
+            "reservation": args.reservation or "DRY_RUN",
+            "nodes_tested": args.nodes
+        },
+        "cpu_benchmarks": {},
+        "network_benchmarks": {}
+    }
+
+    mode = f"RESERVATION: {args.reservation}" if args.reservation else "DRY RUN (No Reservation)"
+    simple_logger.info(f"--- Starting Benchmark Suite | Mode: {mode} ---")
+    simple_logger.info(f"Target Nodes: {', '.join(args.nodes)}\n")
+
+    # Command line flags override #SBATCH headers in the shell scripts
+    base_slurm = [
+        "sbatch", "--wait", 
+        "--cluster=chip-cpu", 
+        "--partition=support", 
+        "--qos=support", 
+        "--account=pi_doit"
+    ]
+    if args.reservation:
+        base_slurm.append(f"--reservation={args.reservation}")
+
+    # ==========================================
+    # Phase 1: Individual CPU Benchmarks
+    # ==========================================
+    simple_logger.info("=== PHASE 1: CPU Benchmarks ===")
+    for node in args.nodes:
+        cmd = base_slurm + [f"--nodelist={node}", "--job-name=cpu_bench", "run_cpu_bench.sh"]
+        code = run_sbatch_wait(cmd, full_logger, f"CPU Bench on {node}")
+        
+        # NOTE: Update 'cpu_c18-17.json' to whatever your cpu_bench.py actually outputs
+        expected_json = f"cpu_{node}.json" 
+        archive_json = f"output/{expected_json}.{timestamp}"
+        
+        node_data = safe_read_json(expected_json, archive_json)
+        master_results["cpu_benchmarks"][node] = node_data
+        
+        if code == 0 and "error" not in node_data:
+            simple_logger.info(f"[SUCCESS] {node}: CPU Benchmark complete.")
+        else:
+            simple_logger.info(f"[FAILED]  {node}: Check full logs. Data: {node_data.get('error', 'Crashed')}")
+
+    # ==========================================
+    # Phase 2: N x N Bandwidth Matrix
+    # ==========================================
+    simple_logger.info("\n=== PHASE 2: Cross-Node Bandwidth Matrix ===")
+    
+    if len(args.nodes) < 2:
+        simple_logger.info("Skipping Phase 2: Need at least 2 nodes for network tests.")
+    else:
+        node_pairs = list(itertools.combinations(args.nodes, 2))
+        
+        for src, dest in node_pairs:
+            cmd = base_slurm + [f"--nodelist={src},{dest}", "--job-name=net_bench", "run_network_bench.sh"]
+            code = run_sbatch_wait(cmd, full_logger, f"Bandwidth {src} <-> {dest}")
+            
+            # Your network script always outputs to this static filename
+            expected_json = "network_omb_results.json"
+            archive_json = f"output/network_{src}_{dest}_{timestamp}.json"
+            
+            net_data = safe_read_json(expected_json, archive_json)
+            pair_key = f"{src}_to_{dest}"
+            master_results["network_benchmarks"][pair_key] = net_data
+            
+            if code == 0 and "error" not in net_data:
+                gbps = net_data.get("peak_bandwidth_gbps", "Unknown")
+                simple_logger.info(f"[SUCCESS] {src} <-> {dest} : Avg Bandwidth: {gbps} Gbps")
+            else:
+                simple_logger.info(f"[FAILED]  {src} <-> {dest} : Test failed. Data: {net_data.get('error', 'Crashed')}")
+
+    # ==========================================
+    # Finalize: Dump Master JSON
+    # ==========================================
+    master_json_path = f"output/master_results_{timestamp}.json"
+    with open(master_json_path, 'w') as f:
+        json.dump(master_results, f, indent=2)
+    
+    simple_logger.info(f"\n=== FINISHED ===")
+    simple_logger.info(f"Master JSON saved to: {master_json_path}")
+
+if __name__ == "__main__":
+    main()
