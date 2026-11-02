@@ -5,24 +5,23 @@ import json
 import numpy as np
 
 def run_dgemm_benchmark(matrix_size=8000, iterations=5):
-    node_name = platform.node()
+    node_name = platform.node().split('.')[0]
     cpu_count = os.cpu_count()
-    
+    job_id = os.environ.get("SLURM_JOB_ID", "local")
+
     print(f"==================================================")
     print(f" HPC CPU DGEMM BENCHMARK")
-    print(f" Node: {node_name}")
+    print(f" Node: {node_name} | Job ID: {job_id}")
     print(f" Available CPU Cores: {cpu_count}")
     print(f" Matrix Dimensions: {matrix_size} x {matrix_size}")
     print(f"==================================================\n")
 
-    # Operations for double-precision N x N matrix multiplication = 2 * N^3
     flops_per_iter = 2.0 * (matrix_size ** 3)
 
     print("Allocating matrices in memory...")
     A = np.random.randn(matrix_size, matrix_size).astype(np.float64)
     B = np.random.randn(matrix_size, matrix_size).astype(np.float64)
 
-    # Warm-up run to spin up CPU frequency and fill cache
     print("Warming up CPU cores...")
     _ = np.dot(A[:1000, :1000], B[:1000, :1000])
 
@@ -47,6 +46,7 @@ def run_dgemm_benchmark(matrix_size=8000, iterations=5):
 
     results = {
         "node": node_name,
+        "job_id": job_id,
         "cores": cpu_count,
         "matrix_size": matrix_size,
         "avg_gflops": round(avg_gflops, 2),
@@ -60,8 +60,8 @@ def run_dgemm_benchmark(matrix_size=8000, iterations=5):
     print(f" Peak Compute Throughput:    {peak_gflops:.2f} GFLOPS")
     print("--------------------------------------------------\n")
 
-    # Save JSON summary locally
-    out_file = f"cpu_{node_name}.json"
+    os.makedirs("output", exist_ok=True)
+    out_file = os.path.join("output", f"cpu_{node_name}_{job_id}.json")
     with open(out_file, "w") as f:
         json.dump(results, f, indent=2)
     print(f"Saved JSON metrics to {out_file}")

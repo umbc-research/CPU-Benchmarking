@@ -6,8 +6,9 @@ import re
 
 def run_omb_benchmark():
     slurm_submit_dir = os.environ.get("SLURM_SUBMIT_DIR", os.getcwd())
+    job_id = os.environ.get("SLURM_JOB_ID", "local")
     omb_dir = os.path.join(slurm_submit_dir, "omb", "libexec", "osu-micro-benchmarks", "mpi", "pt2pt")
-    
+
     latency_bin = os.path.join(omb_dir, "osu_latency")
     bw_bin = os.path.join(omb_dir, "osu_bw")
 
@@ -17,14 +18,12 @@ def run_omb_benchmark():
 
     node_list = os.environ.get("SLURM_JOB_NODELIST", "unknown")
 
-    # 1. Run OSU Latency
     print("Running OSU Latency Test...")
     cmd_lat = ["mpirun", "--mca", "pml", "ucx", "-np", "2", latency_bin]
     res_lat = subprocess.run(cmd_lat, capture_output=True, text=True)
 
     latency_us = None
     for line in res_lat.stdout.splitlines():
-        # Grab lowest payload size (0 or 8 bytes) for true hardware wire latency
         parts = line.strip().split()
         if len(parts) == 2 and parts[0] in ["0", "8"]:
             try:
@@ -33,7 +32,6 @@ def run_omb_benchmark():
             except ValueError:
                 pass
 
-    # 2. Run OSU Bandwidth
     print("Running OSU Bandwidth Test...")
     cmd_bw = ["mpirun", "--mca", "pml", "ucx", "-np", "2", bw_bin]
     res_bw = subprocess.run(cmd_bw, capture_output=True, text=True)
@@ -52,6 +50,7 @@ def run_omb_benchmark():
     peak_bw_gbps = round((peak_bw_mbps * 8) / 1000.0, 2)
 
     results = {
+        "job_id": job_id,
         "nodes": node_list,
         "latency_us": latency_us,
         "peak_bandwidth_mbps": peak_bw_mbps,
@@ -64,7 +63,8 @@ def run_omb_benchmark():
     print(f" Peak Throughput Speed:   {peak_bw_mbps} MB/s ({peak_bw_gbps} Gbps)")
     print("--------------------------------------------------\n")
 
-    out_file = "network_omb_results.json"
+    os.makedirs("output", exist_ok=True)
+    out_file = os.path.join("output", f"network_omb_{job_id}.json")
     with open(out_file, "w") as f:
         json.dump(results, f, indent=2)
     print(f"Saved JSON metrics to {out_file}")
